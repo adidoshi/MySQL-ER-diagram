@@ -1,4 +1,5 @@
 # MySQL Entity Relationship Diagram-
+Using MySQL workbench.
 
 Created schema for an educational institute with respect to their students, attendance, comapny_drives, tasks....etc.
 
