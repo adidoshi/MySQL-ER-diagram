@@ -1,0 +1,38 @@
+Queries -
+
+1.get number problems solved in codekatta by combining the users						
+->
+SELECT SUM(solved_problems) AS total_problems_solved
+FROM codekatta
+JOIN users 
+ON codekatta.user_id = users.user_id;
+
+2. display the company_drives attended by a user					
+->
+SELECT t2.user_first_name, t1.company_name
+FROM company_drives AS t1
+JOIN users AS t2
+ON t1.user_id = t2.user_id;
+
+3.combine & display student_activated_courses and courses for a specific user grouping them based on the course			
+-> 
+SELECT t1.user_first_name, t3.completed, t2.course_name, 'active' AS status
+FROM users AS t1
+JOIN courses as t2
+ON t1.user_id = t2.user_id
+JOIN student_activated_courses as t3
+ON t2.course_id = t3.course_id
+WHERE t1.user_id=2;
+
+4.list all the mentors
+->
+SELECT * 
+FROM mentor;
+
+5. list no of students that are  assigned for a mentor			
+-> 
+SELECT mentor.mentor_name, users.user_first_name
+FROM mentor
+JOIN users 
+ON mentor.mentor_id = users.mentor_id
+
